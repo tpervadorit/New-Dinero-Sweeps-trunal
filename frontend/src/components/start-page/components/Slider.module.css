@@ -1,0 +1,67 @@
+.sliderContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+.sliderItems {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.sliderItem {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.navButton:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.navButton:focus {
+  outline: none;
+}
+
+.navButton:first-of-type {
+  left: 10px;
+}
+
+.navButton:last-of-type {
+  right: 10px;
+}
+
+/* Mobile responsive design */
+@media (max-width: 600px) {
+  .sliderItem {
+    font-size: 16px;
+    padding: 15px;
+  }
+}
