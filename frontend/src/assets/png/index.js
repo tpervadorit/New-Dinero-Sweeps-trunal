@@ -97,9 +97,9 @@ import facebookSidebar from './facebookSidebar.png';
 import instagramSidebar from './instagramSidebar.png';
 import tiktokSidebar from './tiktokSidebar.png';
 import twitterSidebar from './twitterSidebar.png';
-import Loading from "./Loading.gif"
-import welcome from "./welcome.png"
-import claimBonus from "./claimBonus.png"
+import Loading from './Loading.gif';
+import welcome from './welcome.png';
+import claimBonus from './claimBonus.png';
 
 export {
   bitcoin,

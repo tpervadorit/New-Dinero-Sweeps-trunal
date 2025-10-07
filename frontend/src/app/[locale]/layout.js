@@ -66,7 +66,7 @@ export default async function RootLayout({ children, params }) {
         <main>
           <Suspense
             fallback={
-              <div className='w-svw h-svh flex items-center justify-center'>
+              <div className={'w-svw h-svh flex items-center justify-center'}>
                 <Image src={Loading} alt="Loading" width={300} height={300} />
               </div>
             }

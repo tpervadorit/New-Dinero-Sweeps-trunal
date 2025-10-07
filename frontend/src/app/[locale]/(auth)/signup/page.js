@@ -16,6 +16,43 @@ const Signup = () => {
     status: '',
   });
 
+  async function fetchClientIP() {
+    try {
+      const response = await fetch('https://api.ipify.org?format=json');
+      const data = await response.json();
+      return data.ip;
+    } catch (error) {
+      console.error('Failed to fetch client IP:', error);
+      return null;
+    }
+  }
+
+  function isBlockedRegion(geo, clientIP = null) {
+    if (!geo) return true;
+
+    const stateCode = normalizeState(geo.state_code, geo.state_name);
+
+    // Check if IP is in allowed list (bypasses all other checks)
+    if (clientIP && ALLOWED_IPS.includes(clientIP)) {
+      return false;
+    }
+
+    // Block if not in allowed list
+    if (!ALLOWED_COUNTRIES.includes(geo.country_code)) return true;
+
+    // Block explicit restricted countries
+    if (BLOCKED_COUNTRIES.includes(geo.country_code)) return true;
+
+    // India is fully allowed
+    if (geo.country_code === 'IN') return false;
+
+    // For US, only allow states not in BLOCKED_STATES
+    if (geo.country_code === 'US' && BLOCKED_STATES.includes(stateCode))
+      return true;
+
+    return false; // Otherwise allowed
+  }
+
   useEffect(() => {
     async function fetchGeo() {
       if (

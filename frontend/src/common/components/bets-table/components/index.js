@@ -27,7 +27,7 @@ const BetsTable = () => {
     //myPlaysTableColumnList,
     // selectedRowLimit,
     // handleRowLimitChange,
-    t,
+    // t,
     betsData,
   } = useBetsTable();
 

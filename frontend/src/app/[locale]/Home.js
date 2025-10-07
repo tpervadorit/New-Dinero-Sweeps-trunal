@@ -12,7 +12,7 @@ export default function Home() {
         <Image
           src={'/logo.png'}
           alt="logo"
-          onClick={() => redirect('/')}
+          onClick={() => router.push('/')}
           width={60}
           height={60}
           className="rounded-xl cursor-pointer"

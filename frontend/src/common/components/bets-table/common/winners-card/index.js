@@ -36,7 +36,7 @@ const WinnersCard = ({ data = {}, rank }) => {
         'mt-20 relative'
       )}
     >
-      <div className={`px-4 py-2 grid gap-4 w-full mb-10`}>
+      <div className={'px-4 py-2 grid gap-4 w-full mb-10'}>
         <Image
           className="object-cover min-w-40 min-h-40 w-40 h-40 mx-auto -mt-32"
           src={winnerImage(rank)}

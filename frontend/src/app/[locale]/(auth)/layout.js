@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { cross } from '@/assets/svg';
 import Image from 'next/image';
@@ -9,7 +9,7 @@ export default function AuthLayout({ children }) {
     <section className="mx-[5%]">
       {children}
       <Image
-        src={"/logo.png"}
+        src={'/logo.png'}
         alt="logo"
         onClick={() => redirect('/')}
         width={60}

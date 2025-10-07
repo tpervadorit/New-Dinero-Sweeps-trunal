@@ -22,7 +22,7 @@ const useTopThreePlayers = () => {
   useEffect(() => {
     if (token) fetchMyPlay();
   }, []);
-  return { topPlayersData, loading, error };
+  return { topPlayersData, loading, error }; // token
 };
 
 export default useTopThreePlayers;

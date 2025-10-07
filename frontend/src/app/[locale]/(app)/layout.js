@@ -5,9 +5,10 @@ import { SidebarInset, SidebarProvider } from '@/components/ui/sidebar';
 import Header from '@/components/Header/components';
 import SidebarSection from '@/components/SidebarSection';
 import SocketProvider from '../SocketProvider';
+import ChatModule from './@chat/page';
 import AuthGuard from '@/components/AuthGuard';
 
-export default function AppLayout({ children, chat }) {
+export default function AppLayout({ children }) {
   return (
     <AuthGuard>
       <SocketProvider>
@@ -25,7 +26,7 @@ export default function AppLayout({ children, chat }) {
             <NavMobile />
           </SidebarInset>
           {/* Parallel route slot for @chat */}
-          {chat}
+           <ChatModule />
         </SidebarProvider>
       </SocketProvider>
     </AuthGuard>
